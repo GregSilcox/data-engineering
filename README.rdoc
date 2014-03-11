@@ -14,6 +14,10 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+using postgresql
+set encoding to utf8
+requires environment variables pg_username and pg_password
+this app is not setup yet to run in production
 
 * How to run the test suite
 
