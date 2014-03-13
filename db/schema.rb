@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311192731) do
+ActiveRecord::Schema.define(version: 20140312202653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "data_files", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
+    t.string   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "data_files", ["user_id"], name: "index_data_files_on_user_id", using: :btree
+  create_table "purchases", force: true do |t|
+    t.string   "purchaser_name"
+    t.text     "item_description"
+    t.decimal  "item_price",       precision: 5, scale: 2
+    t.integer  "purchase_count"
+    t.string   "merchant_address"
+    t.string   "merchant_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

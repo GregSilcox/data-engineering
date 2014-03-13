@@ -1,32 +1,45 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
+This README documents the steps necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 * Ruby version
+This is Ruby 2.1 application using Rails 4.1.0.rc1, ruby is installed and managed by RVM, and rails and all gems are installed by gem bundler.
 
 * System dependencies
+The major components of this application are Postgresql for the database, Twitter Bootstrap for styling, haml for view code, carrierwave for file upload, FactoryGirl for test data, and Rspec for the test framework.
+
+Check the Gemfile for further details
 
 * Configuration
+The database configuration requires environment variables for pg_username and pg_password. This can be setup in you .bashrc file, for example:
+
+export pg_username=fred
+export pg_password=secret
 
 * Database creation
+<tt>rake db:create</tt>
 
 * Database initialization
-using postgresql
-set encoding to utf8
-requires environment variables pg_username and pg_password
+<tt>rake db:migrate</tt>
+<tt>rake db:test:prepare</tt>
+
 this app is not setup yet to run in production
 
 * How to run the test suite
+<tt>rspec spec</tt>
 
 * Services (job queues, cache servers, search engines, etc.)
+future plans for background process of file uploads.
 
 * Deployment instructions
+future plans
 
-* ...
+* Several items needed to move this toward production
+pagination
+authentication
+authorization
 
+check to only import a given file once.
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
