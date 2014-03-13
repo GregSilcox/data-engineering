@@ -12,10 +12,10 @@ class DataFilesController < ApplicationController
     @data_file.data = params[ :data_file ][ :data ]
 
     if @data_file.parse
-      flash[ :success ] = "Successfully uploaded the data file!"
+      flash[ :notice ] = "Successfully uploaded the data file!"
       render :show
     else
-      flash[ :danger ] = "Unable to upload the data file!"
+      flash[ :error ] = "Unable to upload the data file!"
       render :new
     end
   rescue Errno::ENOENT
